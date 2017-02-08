@@ -55,3 +55,4 @@ for a in range(10000):
     os.system('clear')
 
 # see also http://www.robot-electronics.co.uk/i2c-tutorial
+# https://learn.sparkfun.com/tutorials/i2c
