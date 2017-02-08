@@ -53,3 +53,5 @@ for a in range(10000):
 
     time.sleep(0.1)
     os.system('clear')
+
+# see also http://www.robot-electronics.co.uk/i2c-tutorial
