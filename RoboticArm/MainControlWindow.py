@@ -115,4 +115,4 @@ checkbutton_motor_Z_enabled.pack(side = 'top')
 # start GUI
 center_window_with_dimensions(w, h)
 root.mainloop()
-#clearGPIO() # cleanup all GPIO using incapsulating function from RoboticArm.stepper_L293_bipolar
+clearGPIO() # cleanup all GPIO using incapsulating function from RoboticArm.stepper_L293_bipolar
