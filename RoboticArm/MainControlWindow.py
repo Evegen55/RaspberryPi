@@ -10,6 +10,8 @@ from stepper_L293_bipolar import *
 root = Tk()
 w = 600 # width for the Tk root
 h = 300 # height for the Tk root
+
+# variables for handling a state of buttons, radiobuttons, scales and so on
 varDelay = StringVar()
 varCheckMotor_X_Enable = IntVar()
 varCheckMotor_Y_Enable = IntVar()
