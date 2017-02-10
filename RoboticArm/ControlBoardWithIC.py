@@ -5,6 +5,9 @@ The main class that represent control board with electronic elements for drive a
 # TODO
 from stepper_L293_bipolar import *
 
+def clearGPIO():
+    GPIO.cleanup()
+
 def enable_driver_X():
     enable_motor()
 

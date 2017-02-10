@@ -59,11 +59,6 @@ def setStep(w1, w2, w3, w4):
     GPIO.output(coil_B_1_pin, w3)
     GPIO.output(coil_B_2_pin, w4)
 
-
-def clearGPIO():
-    GPIO.cleanup()
-
-
 def turn_stepper_from_CLI():
     print("Here we go! Press CTRL+C to exit")
     try:
