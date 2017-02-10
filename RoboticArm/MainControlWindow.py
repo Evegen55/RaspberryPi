@@ -93,11 +93,11 @@ button_rotate_right = Button(root, text="Turn motor right", width=20,height=5, b
                              command = rotate_right, repeatdelay="500", repeatinterval = "1000")
 
 # Checkbuttons
-checkbutton_motor_X_enabled = Checkbutton(root, text="Expand", variable=varCheckMotor_X_Enable, command = enable_motor_X)
+checkbutton_motor_X_enabled = Checkbutton(root, text="Enable axis X", variable=varCheckMotor_X_Enable, command = enable_motor_X)
 
-checkbutton_motor_Y_enabled = Checkbutton(root, text="Expand", variable=varCheckMotor_Y_Enable, command = enable_motor_Y)
+checkbutton_motor_Y_enabled = Checkbutton(root, text="Enable axis Y", variable=varCheckMotor_Y_Enable, command = enable_motor_Y)
 
-checkbutton_motor_Z_enabled = Checkbutton(root, text="Expand", variable=varCheckMotor_Z_Enable, command = enable_motor_Z)
+checkbutton_motor_Z_enabled = Checkbutton(root, text="Enable axis Z", variable=varCheckMotor_Z_Enable, command = enable_motor_Z)
 
 # Scales   
 scaleDelay = Scale(root, from_= 1, to = 100, orient = HORIZONTAL, length = 300, width = 50, bg="cyan",fg="black",
