@@ -4,7 +4,7 @@ Created on Jan 31, 2017
 @author: Evgenii_Lartcev
 '''
 from Tkinter import *
-from stepper_L293_bipolar import *
+from ControlBoardWithIC import *
 
 # GUI definition
 root = Tk()
@@ -40,25 +40,22 @@ def rotate_left():
     delay_in_millisecs_as_string = varDelay.get()
     delay_in_secs_as_float = float (varDelay.get()) /1000    
     button_rotate_left.configure(repeatinterval = delay_in_millisecs_as_string)
-    backwards(delay_in_secs_as_float, 1)
+    clockwise_X(delay_in_secs_as_float, 1)
     #print 'left ' , varDelay.get(), delay_in_millisecs_as_string, delay_in_secs_as_float #for test purpose
 
 def rotate_right():
     delay_in_millisecs_as_string = varDelay.get()
     delay_in_secs_as_float = float (varDelay.get()) /1000
-    
     button_rotate_right.configure(repeatinterval = delay_in_millisecs_as_string)
-    forward(delay_in_secs_as_float, 1)
+    counter_clockwise_X(delay_in_secs_as_float, 1)
     #print 'right ' , varDelay.get(), delay_in_millisecs_as_string, delay_in_secs_as_float #for test purpose
 
 
 def enable_motor_X():
     if varCheckMotor_X_Enable.get() == 1:
-        enable_motor()
-        #print 'gdsfgds'
+        enable_driver_X()
     if varCheckMotor_X_Enable.get() == 0:
-        disable_motor()
-        #print '========='
+        disable_driver_X()
     pass
 
 
@@ -78,11 +75,11 @@ def rotateTo(direction):
     delay_in_secs_as_float = float (varDelay.get()) /1000
     if direction == 'left':
         button_rotate_left.configure(repeatinterval = delay_in_millisecs_as_string)
-        backwards(delay_in_secs_as_float, 1)
+        clockwise_X(delay_in_secs_as_float, 1)
         #print 'left ' , varDelay.get(), delay_in_millisecs_as_string, delay_in_secs_as_float #for test purpose
     elif direction == 'right':
         button_rotate_right.configure(repeatinterval = delay_in_millisecs_as_string)
-        forward(delay_in_secs_as_float, 1)
+        counter_clockwise_X(delay_in_secs_as_float, 1)
         #print 'right ' , varDelay.get(), delay_in_millisecs_as_string, delay_in_secs_as_float #for test purpose
     
 # Buttons
@@ -94,9 +91,7 @@ button_rotate_right = Button(root, text="Turn motor right", width=20,height=5, b
 
 # Checkbuttons
 checkbutton_motor_X_enabled = Checkbutton(root, text="Enable axis X", variable=varCheckMotor_X_Enable, command = enable_motor_X)
-
 checkbutton_motor_Y_enabled = Checkbutton(root, text="Enable axis Y", variable=varCheckMotor_Y_Enable, command = enable_motor_Y)
-
 checkbutton_motor_Z_enabled = Checkbutton(root, text="Enable axis Z", variable=varCheckMotor_Z_Enable, command = enable_motor_Z)
 
 # Scales   
