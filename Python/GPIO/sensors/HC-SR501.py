@@ -6,7 +6,7 @@ import time
 import RPi.GPIO as GPIO
 
 # Use BCM GPIO references instead of physical pin numbers
-GPIO.setmode(GPIO.BCM)
+GPIO.setmode(GPIO.BCM) # Broadcom pin-numbering scheme
 
 # Pin definitons:
 GPIO_PIR = 7
@@ -15,7 +15,7 @@ GPIO_LED = 8
 # Pin Setup:
 GPIO.setup(GPIO_PIR, GPIO.IN)  # Echo
 GPIO.setup(GPIO_LED, GPIO.OUT)
-GPIO.output(8, False)
+GPIO.output(GPIO_LED, False)
 
 # helper vars
 Current_State = 0
